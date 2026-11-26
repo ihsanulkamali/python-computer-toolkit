@@ -35,6 +35,21 @@ This project is built while learning Python programming, computational logic, an
 - Decimal to Binary Converter
 - Unit Converter
 
+## How to Run
+
+1. Install Python.
+2. Download or clone this repository.
+3. Open the project folder in VS Code.
+4. Run the following command in the terminal:
+
+```bash
+python main.py
+
+## Technologies Used
+- Python
+- Visual Studio Code
+- Git and GitHub
+
 
 ## Author
 Kamali
