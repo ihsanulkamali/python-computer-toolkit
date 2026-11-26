@@ -112,6 +112,27 @@ while True:
             history.append(
                 f"{angka1} {operasi} {angka2} = {hasil}"
             )
+    elif pilihan == "7":
+        binary = input("Masukkan bilangan biner: ").strip()
+
+        if binary and all(bit in "01" for bit in binary):
+            hasil = int(binary, 2)
+            print("Hasil desimal:", hasil)
+        else:
+            print("Input hanya boleh berisi 0 dan 1!")
+
+    elif pilihan == "8":
+        try:
+            angka = int(input("Masukkan bilangan desimal: "))
+
+            if angka >= 0:
+                hasil = format(angka, "b")
+                print("Hasil biner:", hasil)
+            else:
+                print("Masukkan bilangan positif atau nol!")
+
+        except ValueError:
+            print("Input harus berupa bilangan bulat!")
 
         except ValueError:
             print("Input harus berupa angka!")
