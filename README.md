@@ -27,10 +27,14 @@ This project is built while learning Python programming, computational logic, an
 - Functions of try and except
 - Basic computational logic
 
-## Planned Projects
+## Completed Features
+- Basic Calculator
+- Calculation History
+- Clear Calculation History
 - Binary to Decimal Converter
 - Decimal to Binary Converter
 - Unit Converter
+
 
 ## Author
 Kamali
