@@ -1,36 +1,88 @@
+# Python Computer Toolkit
+history = []
 
-riwayat = []
-
+# Main Menu
 while True:
-    print("\n=== PYTHON CALCULATOR ===")
+    print("\n=== PYTHON CALCULATOR TOOLKIT ===")
     print("1. Penjumlahan (+)")
     print("2. Pengurangan (-)")
     print("3. Perkalian (*)")
     print("4. Pembagian (/)")
     print("5. Lihat Riwayat")
     print("6. Hapus Riwayat")
-    print("7. Keluar")
+    print("7. Binary to Decimal Converter")
+    print("8. Decimal to Binary Converter")
+    print("9. Unit Converter")
+    print("10. Keluar")
 
-    pilihan = input("Pilih menu (1-7): ")
+    pilihan = input("Pilih menu (1-10): ")
 
-    if pilihan == "7":
+    if pilihan == "10":
         print("Terima kasih sudah menggunakan kalkulator!")
         break
 
     elif pilihan == "5":
-        if len(riwayat) == 0:
+        if len(history) == 0:
             print("Belum ada riwayat.")
         else:
             print("\n=== RIWAYAT PERHITUNGAN ===")
-            for data in riwayat:
+            for data in history:
                 print(data)
 
     elif pilihan == "6":
-        riwayat.clear()
+        history.clear()
         print("Riwayat berhasil dihapus!")
+    elif pilihan == "7":
+        try:
+            biner = input("Masukkan angka biner: ")
+            desimal = int(biner, 2)
+
+            print("Hasil desimal:", desimal)
+
+        except ValueError:
+            print("Input biner tidak valid! Gunakan angka 0 dan 1.")
+    elif pilihan == "8":
+        try:
+            desimal = int(input("Masukkan angka desimal: "))
+            biner = bin(desimal)[2:]
+
+            print("Hasil biner:", biner)
+
+        except ValueError:
+            print("Input harus berupa bilangan bulat!")
+
+    elif pilihan == "9":
+        print("\n=== UNIT CONVERTER ===")
+        print("1. Kilometer ke Meter")
+        print("2. Meter ke Kilometer")
+        print("3. Meter ke Centimeter")
+
+        satuan = input("Pilih konversi (1-3): ")
+
+        try:
+            if satuan == "1":
+               km = float(input("Masukkan kilometer: "))
+               meter = km * 1000
+               print("Hasil:", meter, "meter")
+
+            elif satuan == "2":
+                meter = float(input("Masukkan meter: "))
+                km = meter / 1000
+                print("Hasil:", km, "kilometer")
+
+            elif satuan == "3":
+                 meter = float(input("Masukkan meter: "))
+                 cm = meter * 100
+                 print("Hasil:", cm, "centimeter")
+
+            else:
+                 print("Pilihan tidak valid!")
+
+        except ValueError:
+                 print("Input harus berupa angka!")        
 
     elif pilihan in ["1", "2", "3", "4"]:
-        try:
+        try: 
             angka1 = float(input("Masukkan angka pertama: "))
             angka2 = float(input("Masukkan angka kedua: "))
 
@@ -57,7 +109,7 @@ while True:
 
             print("Hasil:", hasil)
 
-            riwayat.append(
+            history.append(
                 f"{angka1} {operasi} {angka2} = {hasil}"
             )
 
